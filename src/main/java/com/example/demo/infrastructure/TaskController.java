@@ -24,7 +24,7 @@ public class TaskController {
     }
 
     @PostMapping("/tasks")
-    public String createTask(@Valid @RequestBody Task task) {
+    public String createTask(@Valid @RequestBody com.example.demo.domain.Task task) {
      return null;
     }
 }
