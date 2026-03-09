@@ -6,6 +6,8 @@ import com.example.demo.application.TaskUseCase;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class TaskController {
@@ -17,8 +19,8 @@ public class TaskController {
     }
 
     @GetMapping("/tasks")
-    public String getTasks() {
-        return taskUseCase.getTasks().toString();
+    public List<com.example.demo.domain.Task> getTasks() {
+        return taskUseCase.getTasks();
     }
 
     @PostMapping("/tasks")
