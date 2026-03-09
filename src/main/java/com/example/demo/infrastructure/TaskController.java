@@ -4,12 +4,10 @@ package com.example.demo.infrastructure;
 import com.example.demo.application.Task;
 import com.example.demo.application.TaskUseCase;
 import jakarta.validation.Valid;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@RestController("api/")
+@RestController
+@RequestMapping("/api")
 public class TaskController {
 
     private TaskUseCase taskUseCase;
@@ -19,7 +17,7 @@ public class TaskController {
     }
 
     @GetMapping("/tasks")
-    public String getTaskz() {
+    public String getTasks() {
         return taskUseCase.getTasks().toString();
     }
 
