@@ -1,11 +1,13 @@
 package com.example.demo.application;
 
 import com.example.demo.infrastructure.TaskRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 public class TaskUseCase implements Task {
 
     private TaskRepository taskRepository;
@@ -21,6 +23,7 @@ public class TaskUseCase implements Task {
 
     @Override
     public List<com.example.demo.domain.Task> getTasks() {
+        log.info("Returning list of tasks");
         return taskRepository.getTasks();
     }
 }
