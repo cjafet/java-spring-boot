@@ -24,6 +24,11 @@ public class TaskUseCase implements Task {
     @Override
     public List<com.example.demo.domain.Task> getTasks() {
         log.info("Returning list of tasks");
-        return taskRepository.getTasks();
+        try {
+            return taskRepository.getTasks();
+        } catch (Exception ex) {
+            log.error("An unexpected error occurred. Try again later.");
+            throw new RuntimeException("An unexpected error occurred. Try again later.");
+        }
     }
 }
